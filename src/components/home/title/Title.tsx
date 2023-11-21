@@ -2,10 +2,10 @@ import React, { FC } from 'react'
 import { useAppSelectore } from '../../../hooks/Hooks'
 
 export const Title = () => {
-  const { popular, loanding } = useAppSelectore(state => state.popularReducer)
+  const { popular, loaning } = useAppSelectore(state => state.popularReducer)
   const bg =  popular[Math.floor(Math.random() * popular.length)] ;
 
-  const gbNew = loanding ? bg.backdrop_path : "t5zCBSB5xMDKcDqe91qahCOUYVV.jpg"
+  const gbNew = loaning ? bg.backdrop_path : "t5zCBSB5xMDKcDqe91qahCOUYVV.jpg"
   
 
 

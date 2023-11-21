@@ -4,12 +4,12 @@ import ReactPlayer from 'react-player'
 import { useAppDispatch, useAppSelectore } from '../../../../hooks/Hooks'
 import { trailerClose } from '../../../../store/trailer-slice/Trailer-slice'
 export const Video = () => {
-  const { trailer, loanding, close } = useAppSelectore(state => state.trailerReducer)
+  const { trailer, loading, close } = useAppSelectore(state => state.trailerReducer)
   const dispatch = useAppDispatch()
   
   return (<>
     {
-      loanding ?
+      loading ?
         <div className=' w-full h-full z-10 bg-[#1f1b2ed7] sticky '>
           
           <div className='flex items-center justify-center flex-col sticky top-20 '>

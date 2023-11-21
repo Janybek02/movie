@@ -1,16 +1,16 @@
 import {useEffect, useState} from "react"
 import { useAppDispatch, useAppSelectore } from "../../../hooks/Hooks"
-import { getTvSeries } from "../../../store/actions"
+import {getMovieSeries, getTvSeries} from "../../../store/actions"
 import Slider from 'react-slick'
 import {MdOutlineFavorite} from 'react-icons/md'
 
 export const Series = () => {
-    const {error, seriece } = useAppSelectore(state => state.genreReducer)
+    const {error, series } = useAppSelectore(state => state.seriesReducer)
     const [click, setClick] = useState<boolean>(false)
   
     const dispatch = useAppDispatch()
     useEffect(() => {
-        dispatch(getTvSeries())
+        dispatch(getMovieSeries())
     }, [])
     let i = "";
     let slider 
@@ -41,7 +41,7 @@ export const Series = () => {
             </div> */}
             <Slider {...settings}>
                 {
-                    seriece.map((items) => {
+                    series.map((items) => {
                         const wid: number = Math.trunc(items.vote_average)            
                         i = wid >= 8 ? "border-[#1eb022]" : (wid >= 7 ? 'border-[#3f6d11]' : (wid >= 6 ? "border-[#d1e215]" : (wid >= 5 ? "border-[#817605]" : (wid >= 4 ? "boreder-orange" : "border-slate"))))
                         return <>

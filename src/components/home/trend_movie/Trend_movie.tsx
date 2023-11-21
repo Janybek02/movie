@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import { getData, } from '../../../store/actions'
-import Slider from 'react-slick'
-import { useAppSelectore, useAppDispatch } from '../../../hooks/Hooks'
-import { MdOutlineFavorite } from "react-icons/md"
-import { Link } from 'react-router-dom'
+import {useAppDispatch, useAppSelectore} from "../../../hooks/Hooks";
+import React, {useEffect} from "react";
+import { trendGetMovie} from "../../../store/actions";
+import Slider from "react-slick";
+import {Link} from "react-router-dom";
+import {MdOutlineFavorite} from "react-icons/md";
 
-
-export const Popular = () => {
-    const [click , setClick] = useState<boolean>(false)
-    const { popular } = useAppSelectore(state => state.popularReducer)
-    const {series } = useAppSelectore(state => state.seriesReducer)
+export const Trend_movie = () => {
+    const { trend, error } = useAppSelectore(state => state.trendReducer)
     const dispatch = useAppDispatch()
     useEffect(() => {
-        dispatch(getData())
+        dispatch(trendGetMovie())
     }, [])
     let i = "";
     let slider
@@ -35,17 +32,16 @@ export const Popular = () => {
             <div className=' popular w-full  bg-[#101616] rounded-t-[5px]'>
                 <Slider {...settings}>
                     {
-
-                        popular.map((items) => {
+                        trend.map((items) => {
                             const wid: number = Math.trunc(items.vote_average)
                             i = wid >= 8 ? "border-[#1eb022]" : (wid >= 7 ? 'border-[#3f6d11]' : (wid >= 6 ? "border-[#d1e215]" : (wid >= 5 ? "border-[#817605]" : (wid >= 4 ? "boreder-orange" : "border-slate"))))
                             return <>
                                 <div className=' w-[180px] h-[250px] '>
                                     <div className='w-full h-full rounded-[50%] reletive'>
                                         <Link to={`/${items.id}`}>
-                                        <div className='w-full h-full rounded-[20px]'>
-                                            <img className=' rounded-[20px]' src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${items.poster_path}`} alt="" />
-                                        </div>
+                                            <div className='w-full h-full rounded-[20px]'>
+                                                <img className=' rounded-[20px]' src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${items.poster_path}`} alt="" />
+                                            </div>
                                         </Link>
 
                                         <button className=' absolute ml-[140px] top-1 shadow-sm  text-[#1f1b2ed7] text-[25px]'><MdOutlineFavorite /></button>

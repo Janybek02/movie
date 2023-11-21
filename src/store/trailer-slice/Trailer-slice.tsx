@@ -19,13 +19,13 @@ interface TrailerData {
 interface Trailer {
   trailer: any[];
   error: string;
-  loanding : boolean
+  loading : boolean;
   close: boolean;
 }
 
 const initialState: Trailer = {
   trailer: [],
-  loanding : false,
+  loading : false,
   error: "",
   close: false,
 };
@@ -34,8 +34,8 @@ export const trailerSlice = createSlice({
   name: "trailer",
   initialState,
   reducers: {
-    trailerLoanding(state, action: PayloadAction<boolean>) {
-      state.loanding = action.payload
+    trailerLoading(state, action: PayloadAction<boolean>) {
+      state.loading = action.payload
     },
     trailerSuccess(state, action: PayloadAction<any[]>) {
       state.trailer = action.payload
@@ -50,4 +50,4 @@ export const trailerSlice = createSlice({
 });
 
 export default trailerSlice.reducer;
-export const { trailerSuccess, trailerError, trailerClose, trailerLoanding } = trailerSlice.actions;
+export const { trailerSuccess, trailerError, trailerClose, trailerLoading } = trailerSlice.actions;

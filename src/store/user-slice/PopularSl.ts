@@ -21,13 +21,13 @@ interface PopularData {
 }
 interface State {
     popular: PopularData[],
-    loanding: boolean,
+    loaning: boolean,
     error: string,
 }
 
 const initialState: State = {
     popular: [],
-    loanding: false,
+    loaning: false,
     error: "",
 }
 
@@ -36,15 +36,15 @@ export const popularSlice = createSlice({
     name: "popular",
     initialState,
     reducers: {
-        getDataLoanding(state) {
-            state.loanding = true
+        getDataLoading(state) {
+            state.loaning = true
         },
         getDataSuccess(state, action: PayloadAction<PopularData[]>) {
-            state.loanding = true
+            state.loaning = true
             state.popular = state.popular = action.payload
         },
         getDataError(state, action: PayloadAction<string>) {
-            state.loanding = true
+            state.loaning = true
             state.error = action.payload
         }
     }
@@ -52,4 +52,4 @@ export const popularSlice = createSlice({
 
 
 export default popularSlice.reducer
-export const { getDataLoanding, getDataSuccess, getDataError } = popularSlice.actions
+export const { getDataLoading, getDataSuccess, getDataError } = popularSlice.actions

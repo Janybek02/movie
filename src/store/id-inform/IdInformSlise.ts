@@ -30,22 +30,22 @@ vote_count:number,
 
 interface Istate{
     idInform : idInform[],
-    loanding: boolean,
+    loading: boolean,
     error: string,
 }
 
 
 const initialState :Istate = {
     idInform : [],
-    loanding : false,
+    loading : false,
     error: ""
 }
  const idInformSlice = createSlice({
     name: "idInform",
     initialState,
     reducers: {
-        idInformLoanding(state, action:PayloadAction<boolean>){
-             state.loanding = action.payload
+        idInformLoading(state, action:PayloadAction<boolean>){
+             state.loading = action.payload
         },
         idInformSuccess(state, action:PayloadAction<idInform>) {
             console.log(action);
@@ -60,4 +60,4 @@ const initialState :Istate = {
 
 
 export default idInformSlice.reducer
-export const {idInformLoanding, idInformError, idInformSuccess } = idInformSlice.actions
+export const {idInformLoading, idInformError, idInformSuccess } = idInformSlice.actions

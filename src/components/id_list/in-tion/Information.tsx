@@ -9,7 +9,7 @@ import { trailerClose } from '../../../store/trailer-slice/Trailer-slice'
 
 export const Information = () => {
   const { id } = useParams<{ id: string }>()
-  const { idInform, loanding } = useAppSelectore(state => state.idInformReducer)
+  const { idInform, loading } = useAppSelectore(state => state.idInformReducer)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Information = () => {
     <>
 
       {
-        loanding ?
+        loading ?
           <div className='  w-full h-[110vh] '>
             {idInform.map(items => {
               const wid: number = Math.trunc(items.vote_average)
@@ -44,7 +44,7 @@ export const Information = () => {
                         <div>
                         <p className=' text-white text-[30px] font-bold '>{items.title}</p>
                         <div className=' flex items-center w-[146px] justify-between '>
-                          <p className=' text-white font-medium text-[16px] '>{items.genres[0].name}</p>
+                          {/*<p className=' text-white font-medium text-[16px] '>{items.genres[0].name || ""}</p>*/}
                           <p className=' text-white font-medium text-[16px] '>{items.release_date}</p>
                         </div>
                         </div>      

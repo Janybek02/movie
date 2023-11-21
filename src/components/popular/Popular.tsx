@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelectore } from '../../hooks/Hooks'
 import { getData } from '../../store/actions'
 
 export const Popular = () => {
-    const {popular, error, loanding} = useAppSelectore(state => state.popularReducer)
+    const {popular, error, loaning} = useAppSelectore(state => state.popularReducer)
     const dispatch = useAppDispatch()
     useEffect(() => {
         dispatch(getData())
