@@ -8,6 +8,7 @@ import {trailerClose} from '../../../store/trailer-slice/Trailer-slice'
 export const Trailer = () => {
     const {popular} = useAppSelectore(state => state.popularReducer)
     const {trailer, close} = useAppSelectore(state => state.trailerReducer)
+    const [url, setUrl] = useState("kjQBrc00fB2RjHZB3PGR4w9ibpz.jpg")
     const allFunc = (id: any) => {
         dispatch(trailerClose(true))
         dispatch(getTrailer(id))
@@ -23,19 +24,25 @@ export const Trailer = () => {
     }
     return (
         <>
-
-            <div className='trailer w-full mt-[15px]  bg-[#101616] h-[300px] '>
-                <div className=' w-full ml-3 h-full mt-[30px] '>
+            <div
+                style={{
+                    transition: "0.5s",
+                    background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${url}") center center/cover no-repeat`
+                }}
+                className='trailer w-full mt-[15px]  bg-[#07050e] h-[300px] '>
+                <div className=' w-full rounded h-full  bg-[#10161689]  '>
                     <Slider {...settings} >
                         {
                             popular.map(items => {
-                                return <div>
+                                return <div className=" mt-8 ml-8">
                                     <div
+                                        onMouseOver={() => setUrl(items.backdrop_path)}
                                         style={{
-                                            background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${items.backdrop_path}") center center/cover no-repeat`
+                                            background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${items.backdrop_path}")  center/cover no-repeat`
                                         }}
                                         className='  w-[400px] rounded-lg  h-[200px]  '>
-                                        <div className=' w-full h-full bg-[#1016166c] flex items-center justify-center'>
+                                        <div
+                                            className=' w-full h-full bg-[#1016166c] rounded-lg flex items-center justify-center'>
                                             <button
                                                 onClick={() => allFunc(items.id)}
                                                 className=' w-[50px] h-[50px]  '>

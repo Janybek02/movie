@@ -32,7 +32,7 @@ export const Popular = () => {
 
     return (
         <>
-            <div className=' popular w-full  bg-[#101616] rounded-t-[5px]'>
+            <div className=' popular w-full  bg-[#07050e] rounded-t-[5px]'>
                 <Slider {...settings}>
                     {
 

@@ -21,7 +21,7 @@ export const Home = () => {
     return (
         <div className='flex flex-col justify-center items-center '>
             <Title/>
-            <p className=' text-[30px] mb-7 font-bold text-white'> Popular </p>
+            <p className=' text-[30px] mb-7 px-6 rounded-[5px] font-bold bg-[#1f1b2e] text-white'> Popular </p>
             <Popular/>
             <p className=' text-[30px] mt-[50px] font-bold text-white'> Trailers</p>
             <Trailer/>

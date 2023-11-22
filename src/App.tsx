@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App ">
       <Header />
-      <div className=' bg-[#101616] px-16  '>
+      <div className=' bg-[#07050e] px-[3%]  '>
         <Link />
       </div>
       {close ?
@@ -40,7 +40,7 @@ function App() {
         </div>
         : ""
       }
-      {/* <Footer/> */}
+       <Footer/>
     </div>
   );
 }
