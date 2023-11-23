@@ -14,11 +14,11 @@ export const Title = () => {
                     background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${gbNew}") center/cover `
                 }}
                 className={`w-full    bg-filter h-[400px] bg-no-repeat bg-cover bg-center `}>
-                <div className=' h-full w-full  pl-[100px] pt-[50px] bg-[#10161689]'>
-                    <p className='  text-white  text-[35px] font-bold '>
+                <div className=' h-full w-full max-[1000px]:pl-[5%]  pl-[100px] pt-[50px] bg-[#10161689]'>
+                    <p className='  text-white max-[900px]:text-[30px] text-[35px] font-bold '>
                         Wellcome! you can find all the movies here
                     </p>
-                    <p className='text-white text-[25px] font-medium'>
+                    <p className='text-white text-[25px] font-medium max-[900px]:text-[20px]'>
                         Millions of films, TV series and people. Explore now.
                         <div className=' w-[90%] pt-10'>
                             <label className="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>

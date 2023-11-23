@@ -15,12 +15,14 @@ export const Trailer = () => {
     }
 
     const dispatch = useAppDispatch()
+    const width = window.innerWidth
+    let slider = width >= 1289 ? 3 : (width >= 780 ? 2 : 1)
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3
+        slidesToShow: slider,
+        slidesToScroll: slider
     }
     return (
         <>
@@ -34,13 +36,13 @@ export const Trailer = () => {
                     <Slider {...settings} >
                         {
                             popular.map(items => {
-                                return <div className=" mt-8 ml-8">
+                                return <div className=" w-full h-full pt-8 ">
                                     <div
                                         onMouseOver={() => setUrl(items.backdrop_path)}
                                         style={{
                                             background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${items.backdrop_path}")  center/cover no-repeat`
                                         }}
-                                        className='  w-[400px] rounded-lg  h-[200px]  '>
+                                        className='  w-[400px] max-[900px]:w-[350px] rounded-lg  h-[200px] mx-auto   '>
                                         <div
                                             className=' w-full h-full bg-[#1016166c] rounded-lg flex items-center justify-center'>
                                             <button

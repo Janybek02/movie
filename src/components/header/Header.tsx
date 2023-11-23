@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 // bg-[#1F1B2E]
 export const Header = () => {
     return (
-        <div className=' w-full h-[70px] bg-[#07050e] p-4 items-center px-16'>
-            <div className='flex items-center px-[60px] justify-between'>
+        <div className=' w-full h-[70px] bg-[#07050e] p-4 items-center max-[800px]:px-1 px-16'>
+            <div className='flex items-center px-[60px] max-[600px]:hidden max-[900px]:px-1 justify-between'>
                 <div className=''>
                     <Link to={"/"} >
                         <p className=' text-[25px] px-6 bg-[#1f1b2e] rounded-[5px] text-white '>Logo</p>
