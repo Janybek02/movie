@@ -18,14 +18,15 @@ export const Popular = () => {
     let slider
     const windSlider = window.innerWidth
     slider = windSlider >= 1500 ?  7 : (windSlider >= 1250 ? 6 : (windSlider >= 1100 ? 5 : (windSlider >= 800 ? 4 : (windSlider >= 500 ? 3 : 2))))
-
+    let auto = windSlider >= 800
+    let speed = windSlider >= 800 ? 2000 : 1000
     const settings = {
         dots: true,
         infinite: true,
         slidesToShow: slider,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 2000,
+        slidesToScroll: slider,
+        autoplay: auto,
+        speed: speed,
         autoplaySpeed: 2000,
         cssEase: "linear"
     };
