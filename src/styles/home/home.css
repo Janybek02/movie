@@ -5,9 +5,17 @@
 .popular .slick-list{
     height:  400px;
 }
+.popular .slick-arrow{
+    font-size: 0;
+}
 @media (max-width: 600px){
     .popular .slick-list{
         height: 300px;
+    }
+}
+@media (max-width: 800px){
+    .popular .button{
+        display: none;
     }
 }
 

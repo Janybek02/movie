@@ -5,9 +5,7 @@ import Slider from 'react-slick'
 import {MdOutlineFavorite} from 'react-icons/md'
 
 export const Series = () => {
-    const {error, series } = useAppSelectore(state => state.seriesReducer)
-    const [click, setClick] = useState<boolean>(false)
-  
+    const { series } = useAppSelectore(state => state.seriesReducer)
     const dispatch = useAppDispatch()
     useEffect(() => {
         dispatch(getMovieSeries())
@@ -15,8 +13,7 @@ export const Series = () => {
     let i = "";
     let slider 
     const windSlider = window.innerWidth
-    slider = windSlider >= 1500 ?  7 : (windSlider >= 1250 ? 6 : (windSlider >= 1100 ? 5 : 4))
-    
+    slider = windSlider >= 1500 ?  7 : (windSlider >= 1250 ? 6 : (windSlider >= 1100 ? 5 : 4))  
     const settings = {
         dots: true,
         infinite: true,
@@ -30,15 +27,6 @@ export const Series = () => {
     return (
         <>
         <div className=' popular w-full m-10  bg-[#101616] rounded-t-[5px]'>
-            {/* <div className=' w-full h-[100px] rounded-t-[5px]  bg-[#101616]'>
-                <label className="relative inline-flex items-center cursor-pointer">
-                    <input type="checkbox" value="" className="sr-only peer" />
-                    <div
-                    onClick={() => setClick(!click)}
-                    className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                    <p className="ml-3 text-[18px] font-medium text-white "></p>
-                </label>
-            </div> */}
             <Slider {...settings}>
                 {
                     series.map((items) => {

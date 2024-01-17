@@ -12,9 +12,6 @@ import { trailerSuccess, trailerError, trailerLoading } from "../trailer-slice/T
 import { idInformError, idInformLoading, idInformSuccess } from "../id-inform/IdInformSlise";
 
 const apiKey: string = "api_key=81cd179ad56aeece49d8340b7c075f89";
-// popular
-
-
 export const getData = () => async (dispatch: AppDispatch) => {
   try {
     setTimeout(()=> {
@@ -28,9 +25,6 @@ export const getData = () => async (dispatch: AppDispatch) => {
     dispatch(getDataError(str));
   }
 };
-//// popular
-
-// series
 export const getMovieSeries = () => async (dispatch: AppDispatch) => {
   try {
     const url = `https://api.themoviedb.org/3/discover/tv?${apiKey}`;
@@ -82,11 +76,6 @@ export const getSeriesTrailer = (id : any) => async (dispatch: AppDispatch) => {
     dispatch(trailerError(str));
   }
 };
-
-
-
-
-
 export const getIdInform = (movie_id: any) => async (dispatch: AppDispatch) => {
   try {
     setTimeout(() => {
@@ -99,8 +88,6 @@ export const getIdInform = (movie_id: any) => async (dispatch: AppDispatch) => {
       dispatch(idInformError("oofoasoo1!!!!"))
   }
 }
-
-
 export const trendGetMovie = () => async (dispatch :AppDispatch) => {
   try {
     setTimeout(() => {

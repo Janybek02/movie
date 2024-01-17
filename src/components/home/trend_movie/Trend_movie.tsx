@@ -14,7 +14,7 @@ export const Trend_movie = () => {
     let i = "";
     let slider
     const windSlider = window.innerWidth
-    let speed = windSlider >= 800 ? 2000 : 1000
+    let speed = windSlider >= 800 ?  2000 : 1000
     let auto = windSlider >= 800
 
     slider = windSlider >= 1500 ?  7 : (windSlider >= 1250 ? 6 : (windSlider >= 1100 ? 5 : (windSlider >= 800 ? 4 : (windSlider >= 500 ? 3 : 2))))
@@ -22,9 +22,9 @@ export const Trend_movie = () => {
         dots: true,
         infinite: true,
         slidesToShow: slider,
-        slidesToScroll: slider,
+        slidesToScroll: 2,
         autoplay: auto,
-        speed: speed,
+        speed: 2000,
         autoplaySpeed: 2000,
         cssEase: "linear"
     };

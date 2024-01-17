@@ -30,17 +30,19 @@ function App() {
 
   return (
     <div className="App ">
-      <Header />
-      <div className=' bg-[#07050e] px-[3%]  '>
-        <Link />
-      </div>
       {close ?
-        <div className=' absolute w-full h-[210vh] top-1'>
+        <div className=' absolute w-full top-1'>
           <Video />
         </div>
         : ""
       }
-       <Footer/>
+      <div>
+        <Header />
+        <div className=' bg-[#07050e] px-[3%]  '>
+          <Link />
+        </div>
+        <Footer />
+      </div>
     </div>
   );
 }

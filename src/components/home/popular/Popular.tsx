@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom'
 
 
 export const Popular = () => {
-    const [click , setClick] = useState<boolean>(false)
+    const [click, setClick] = useState<boolean>(false)
     const { popular } = useAppSelectore(state => state.popularReducer)
-    const {series } = useAppSelectore(state => state.seriesReducer)
+    const { series } = useAppSelectore(state => state.seriesReducer)
     const dispatch = useAppDispatch()
     useEffect(() => {
         dispatch(getData())
@@ -17,26 +17,26 @@ export const Popular = () => {
     let i = "";
     let slider
     const windSlider = window.innerWidth
-    slider = windSlider >= 1500 ?  7 : (windSlider >= 1250 ? 6 : (windSlider >= 1100 ? 5 : (windSlider >= 800 ? 4 : (windSlider >= 500 ? 3 : 2))))
+    let speed = windSlider >= 800 ?  2000 : 1000
     let auto = windSlider >= 800
-    let speed = windSlider >= 800 ? 2000 : 1000
+
+    slider = windSlider >= 1500 ?  7 : (windSlider >= 1250 ? 6 : (windSlider >= 1100 ? 5 : (windSlider >= 800 ? 4 : (windSlider >= 500 ? 3 : 2))))
     const settings = {
         dots: true,
         infinite: true,
         slidesToShow: slider,
-        slidesToScroll: slider,
+        slidesToScroll: 2,
         autoplay: auto,
-        speed: speed,
+        speed: 2000,
         autoplaySpeed: 2000,
         cssEase: "linear"
-    };
+    }
 
     return (
         <>
             <div className=' popular w-full  bg-[#07050e] rounded-t-[5px]'>
                 <Slider {...settings}>
                     {
-
                         popular.map((items) => {
                             const wid: number = Math.trunc(items.vote_average)
                             i = wid >= 8 ? "border-[#1eb022]" : (wid >= 7 ? 'border-[#3f6d11]' : (wid >= 6 ? "border-[#d1e215]" : (wid >= 5 ? "border-[#817605]" : (wid >= 4 ? "boreder-orange" : "border-slate"))))
@@ -44,12 +44,11 @@ export const Popular = () => {
                                 <div className=' w-[180px] max-[600px]:w-[150px] h-[250px] '>
                                     <div className='w-full h-full rounded-[50%] reletive'>
                                         <Link to={`/${items.id}`}>
-                                        <div className='w-full h-full rounded-[20px]'>
-                                            <img className=' rounded-[20px]' src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${items.poster_path}`} alt="" />
-                                        </div>
+                                            <div className='w-full h-full rounded-[20px]'>
+                                                <img className=' rounded-[20px]' src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${items.poster_path}`} alt="" />
+                                            </div>
                                         </Link>
-
-                                        <button className=' absolute ml-[140px] top-1 shadow-sm  text-[#1f1b2ed7] text-[25px]'><MdOutlineFavorite /></button>
+                                        <button className=' absolute ml-[140px] top-1 shadow-sm  text-red-500 text-[25px]'><MdOutlineFavorite /></button>
                                         <div >
                                             <div className=' absolute top-[250px] max-[600px]:top-[210px] bg-black w-[40px] h-[40px] rounded-[50%]'>
                                                 <div className={`border-[3px] ${i}  w-[90%] h-[90%] m-[2px] rounded-[50%] flex items-center justify-center `}>

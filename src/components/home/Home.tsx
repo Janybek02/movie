@@ -10,7 +10,7 @@ import {useAppDispatch} from '../../hooks/Hooks';
 import { Trailer} from './trailer/Trailer';
 import { TrailerTrMovie} from "./trailer_series/TrailerTrMovie";
 import {Trend_movie} from "./trend_movie/Trend_movie";
-
+import { Footer } from '../footer/Footer';
 
 export const Home = () => {
     const dispatch = useAppDispatch()
@@ -21,13 +21,13 @@ export const Home = () => {
     return (
         <div className='flex flex-col justify-center items-center '>
             <Title/>
-            <p className=' text-[30px] mb-7 px-6 rounded-[5px] font-bold bg-[#1f1b2e] text-white'> Popular </p>
+            <p className=' text-[25px] mb-6 px-20 rounded-[5px] font-bold bg-red-500 text-white'> Popular </p>
             <Popular/>
-            <p className=' text-[30px] mt-[50px] font-bold text-white'> Trailers</p>
+            <p className=' text-[25px] my-6 px-20 rounded-[5px] font-bold bg-red-500 text-white'> Trailers</p>
             <Trailer/>
-            <p className=' text-[30px] mb-7 mt-[50px] font-bold text-white'> Trends </p>
+            <p className=' text-[25px] my-6 px-20 rounded-[5px] font-bold bg-red-500 text-white'> Trends </p>
             <Trend_movie/>
-            <p className=' text-[30px] mt-[50px] font-bold text-white'> Trailers</p>
+            <p className=' text-[25px] my-6 px-20 rounded-[5px] font-bold bg-red-500 text-white'> Trailers</p>
             <TrailerTrMovie/>
         </div>
 

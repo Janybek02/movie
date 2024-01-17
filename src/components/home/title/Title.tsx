@@ -34,7 +34,7 @@ export const Title = () => {
                                        className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500    "
                                        placeholder="Search Mockups, Logos..." required/>
                                 <button type="submit"
-                                        className="text-white absolute right-2.5 bottom-2.5 bg-[#101616] hover:bg-white hover:text-[#101616] border-[1px] border-[#101616] focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2  ">Search
+                                        className="text-white absolute right-2.5 bottom-2.5 bg-red-500   hover:border-[1px] border-red-500 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2  ">Search
                                 </button>
                             </div>
                         </div>
