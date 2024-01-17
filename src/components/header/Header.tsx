@@ -115,7 +115,10 @@ useEffect(() => {
             }}
             className={` w-full h-[70px]  top-0 z-50 sticky  p-4 items-center max-[800px]:px-1 px-16`}>
             {chooseMenu ? menu : burgerBox}
-             {burgerMenu }
+            {   chooseMenu ? 
+                 null : burgerMenu 
+            }
+             
         </div>
     )
 }
