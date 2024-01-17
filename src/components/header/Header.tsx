@@ -65,7 +65,7 @@ export const Header = () => {
 
     
     const burgerMenu =  <>
-        <div  className={` w-full ${isOpen ? "translate-x-[0px]" : "translate-x-[-400px]"} transition duration-1000 h-[110vh] bg-black/60 top-16 flex-col flex items-center left-0 absolute z-10`}>
+        <div  className={` w-full ${isOpen ? "translate-x-[0px]" : "translate-x-[-600px]"} transition duration-[1200ms] h-[110vh] bg-black/60 top-16 flex-col flex items-center left-0 absolute z-10`}>
        
                 <Link to={"/popular"}>
                     <p 
