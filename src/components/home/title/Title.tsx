@@ -5,7 +5,7 @@ export const Title = () => {
     const {popular, loaning} = useAppSelectore(state => state.popularReducer)
     const bg = popular[Math.floor(Math.random() * popular.length)];
     const gbNew = loaning ? bg.backdrop_path : "t5zCBSB5xMDKcDqe91qahCOUYVV.jpg"
-
+   
     return (
         // <div>
         <div className=' w-full  pb-10  '>
@@ -13,12 +13,12 @@ export const Title = () => {
                 style={{
                     background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${gbNew}") center/cover `
                 }}
-                className={`w-full    bg-filter h-[400px] bg-no-repeat bg-cover bg-center `}>
-                <div className=' h-full w-full max-[1000px]:pl-[5%]  pl-[100px] pt-[50px] bg-[#10161689]'>
-                    <p className='  text-white max-[900px]:text-[30px] text-[35px] font-bold '>
+                className={`w-full    bg-filter h-[400px]  bg-no-repeat bg-cover bg-center `}>
+                <div className=' h-full w-full max-[450px]:pl-[2%] max-[1000px]:pl-[5%]  pl-[100px] pt-[50px] bg-[#10161689]'>
+                    <p className='  text-white max-[900px]:text-[30px] max-[600px]:text-[25px] text-[35px] font-bold '>
                         Wellcome! you can find all the movies here
                     </p>
-                    <p className='text-white text-[25px] font-medium max-[900px]:text-[20px]'>
+                    <p className='text-white text-[25px] font-medium max-[900px]:text-[20px] max-[600px]:text-[18px]'>
                         Millions of films, TV series and people. Explore now.
                         <div className=' w-[90%] pt-10'>
                             <label className="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
