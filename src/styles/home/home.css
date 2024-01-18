@@ -1,6 +1,9 @@
 .popular .slick-slide{
     width: 400px;
 }
+.slick-dots  {
+    display: none;
+}
 
 .popular .slick-list{
     height:  400px;
@@ -8,16 +11,15 @@
 .slick-next{
     display: none;
 }
-@media (max-width: 600px){
-    .popular .slick-list{
-        height: 300px;
-    }
+.slick-slider .slick-prev:before, .slick-next:before{
+    display: none;
+    font-size: 0;
+  }
+  .slick-next {
+    right: 0;
 }
 @media (max-width: 800px){
-    .slick-slider .slick-prev:before, .slick-next:before{
-        font-size: 30px;
-        display: none;
-    }
+    
 }
 
 
