@@ -18,8 +18,11 @@ display: none;
   .slick-next {
     right: 0;
 }
-@media (max-width: 800px){
-    
+@media (max-width: 550px){
+    .popular .slick-list {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
 }
 
 
