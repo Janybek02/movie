@@ -1,8 +1,8 @@
 .popular .slick-slide{
     width: 400px;
 }
-.slick-dots  {
-    display: none;
+.slick-dots li button:before {
+display: none;
 }
 
 .popular .slick-list{

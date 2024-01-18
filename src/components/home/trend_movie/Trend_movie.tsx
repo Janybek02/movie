@@ -46,7 +46,7 @@ export const Trend_movie = () => {
                                             </div>
                                         </Link>
 
-                                        <button className=' absolute ml-[140px] top-1 shadow-sm  text-[#1f1b2ed7] text-[25px]'><MdOutlineFavorite /></button>
+                                        <button className=' absolute ml-[140px] max-[600px]:ml-[120px] top-1 shadow-sm  text-[#1f1b2ed7] text-[25px]'><MdOutlineFavorite /></button>
                                         <div >
                                             <div className=' absolute top-[250px] bg-black w-[40px] h-[40px] rounded-[50%] max-[600px]:top-[210px]'>
                                                 <div className={`border-[3px] ${i}  w-[90%] h-[90%] m-[2px] rounded-[50%] flex items-center justify-center `}>

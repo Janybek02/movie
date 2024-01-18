@@ -48,7 +48,7 @@ export const Popular = () => {
                                                 <img className=' rounded-[20px]' src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${items.poster_path}`} alt="" />
                                             </div>
                                         </Link>
-                                        <button className=' absolute ml-[140px] top-1 shadow-sm  text-red-500 text-[25px]'><MdOutlineFavorite /></button>
+                                        <button className=' absolute ml-[140px] max-[600px]:ml-[120px] top-1 shadow-sm  text-red-500 text-[25px]'><MdOutlineFavorite /></button>
                                         <div >
                                             <div className=' absolute top-[250px] max-[600px]:top-[210px] bg-black w-[40px] h-[40px] rounded-[50%]'>
                                                 <div className={`border-[3px] ${i}  w-[90%] h-[90%] m-[2px] rounded-[50%] flex items-center justify-center `}>
