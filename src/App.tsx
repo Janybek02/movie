@@ -38,7 +38,7 @@ function App() {
       }
       <div>
         <Header />
-        <div className=' bg-[#07050e] px-[3%]  '>
+        <div className=' bg-[#07050e] px-[3%] max-[550px]:px-0  '>
           <Link />
         </div>
         <Footer />
