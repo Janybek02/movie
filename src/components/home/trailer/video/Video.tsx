@@ -15,13 +15,17 @@ export const Video = () => {
           <div className='flex items-center justify-center flex-col sticky top-20 '>
           <button
             onClick={() => dispatch(trailerClose(false))}
-          className=' w-[80px] h-[30px] bg-white'>Close</button>
-            <ReactPlayer
+          className='  w-[80px] h-[30px] bg-white'>Close</button>
+          <div className=' w-[70%] max-[1200px]:w-[100%] '>
+          <ReactPlayer
               url={`https://www.youtube.com/watch?v=${trailer[trailer.length - 1].key}`}
-              width="70%"
+              width="100%"
               height="500px"
             />
-          b</div>
+
+          </div>
+           
+          </div>
         </div> :
         <div >Error</div>
     }

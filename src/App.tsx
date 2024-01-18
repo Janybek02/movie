@@ -31,10 +31,10 @@ function App() {
   return (
     <div className="App ">
       {close ?
-        <div className=' absolute w-full top-1'>
+        <div className=' absolute w-full h-[288%]'>
           <Video />
         </div>
-        : ""
+        : null
       }
       <div>
         <Header />
