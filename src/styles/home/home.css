@@ -5,8 +5,8 @@
 .popular .slick-list{
     height:  400px;
 }
-.popular .slick-arrow{
-    font-size: 0;
+.slick-next{
+    display: none;
 }
 @media (max-width: 600px){
     .popular .slick-list{
@@ -14,7 +14,8 @@
     }
 }
 @media (max-width: 800px){
-    .popular .button{
+    .slick-slider .slick-prev:before, .slick-next:before{
+        font-size: 30px;
         display: none;
     }
 }

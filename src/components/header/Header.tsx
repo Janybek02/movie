@@ -36,8 +36,7 @@ export const Header = () => {
         <div className=' w-full flex justify-between items-center '>
             <button
                 className="flex flex-col h-12 w-12 ml-2  rounded justify-center items-center group"
-                onClick={() => setIsOpen(!isOpen)}
-            >
+                onClick={() => setIsOpen(!isOpen)}>
                 <div
                     className={`${genericHamburgerLine} ${isOpen
                             ? "rotate-45 bg-slate-50 translate-y-3 opacity-50 group-hover:opacity-100"
@@ -62,11 +61,8 @@ export const Header = () => {
             </Link>
         </div>
     </>
-
-    
     const burgerMenu =  <>
         <div  className={` w-full ${isOpen ? "translate-x-[0px]" : "translate-x-[-600px]"} transition duration-[1200ms] h-[110vh] bg-black/60 top-16 flex-col flex items-center left-0 absolute z-10`}>
-       
                 <Link to={"/popular"}>
                     <p 
                         onClick={() => setIsOpen(!isOpen)}
