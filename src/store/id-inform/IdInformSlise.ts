@@ -3,7 +3,7 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import { Tracing } from "trace_events";
 
 interface idInform {
-    adult:boolean,
+adult:boolean,
 backdrop_path:Tracing,
 belongs_to_collection:null
 budget:number,
@@ -26,15 +26,11 @@ genres:any
 vote_average:number, 
 vote_count:number,
 }
-
-
 interface Istate{
     idInform : idInform[],
     loading: boolean,
     error: string,
 }
-
-
 const initialState :Istate = {
     idInform : [],
     loading : false,
@@ -57,7 +53,5 @@ const initialState :Istate = {
         }
     }
 })
-
-
 export default idInformSlice.reducer
 export const {idInformLoading, idInformError, idInformSuccess } = idInformSlice.actions

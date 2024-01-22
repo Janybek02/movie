@@ -31,7 +31,6 @@ export const Popular = () => {
         autoplaySpeed: 2000,
         cssEase: "linear"
     }
-
     return (
         <>
             <div className=' popular w-full  bg-[#07050e] rounded-t-[5px]'>
