@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelectore } from '../../../hooks/Hooks'
 import { getIdInform } from '../../../store/actions'
 import { FaPlay } from "react-icons/fa"
 import { MdOutlineFavorite, MdBookmarkAdded } from "react-icons/md"
-import { getTrailer, } from '../../../store/actions'
+import { getTrailer, getActors} from '../../../store/actions'
 import { trailerClose } from '../../../store/trailer-slice/Trailer-slice'
 
 export const Information = () => {
@@ -14,6 +14,8 @@ export const Information = () => {
 
   useEffect(() => {
     dispatch(getIdInform(id))
+    dispatch(getActors(id))
+    
   }, [])
   const allFunc = (id: any) => {
     dispatch(trailerClose(true))

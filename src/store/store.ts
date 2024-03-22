@@ -5,6 +5,7 @@ import genreReducer from "./genre/GenreSl"
 import trailerReducer from "./trailer-slice/Trailer-slice"
 import idInformReducer from  "./id-inform/IdInformSlise"
 import trendReducer from "./trend-slice/Trend-slice"
+import actorsSlice from "./actors-slice/ActorsSlice";
 const rootReducer = combineReducers({
     popularReducer,
     seriesReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
     trailerReducer,
     idInformReducer,
     trendReducer,
+    actorsSlice
 })
 
 export const setUpStore = () =>  configureStore({

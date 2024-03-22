@@ -7,19 +7,16 @@ import { AiFillHeart } from "react-icons/ai";
 
 
 
-export const Popular = () => {
-  const { popular, error, loaning } = useAppSelectore(state => state.popularReducer)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(getData())
-  }, [])
+export const Actors = () => {
+  const { actors, error, loaning } = useAppSelectore(state => state.actorsSlice)
+    console.log(actors);
   let i = "";
   return (
     <div className=' w-[100%] px-2 '>
       <div className=' flex flex-wrap w-[100%] justify-between'>
-        {popular.length ?
-          popular.map((items) => {
-            const wid: number = Math.trunc(items.vote_average)
+        {actors.length ?
+          actors.map((items) => {
+            const wid = Math.trunc(items.vote_average)
             i = wid >= 8 ? "border-[#1eb022]" : (wid >= 7 ? 'border-[#3f6d11]' : (wid >= 6 ? "border-[#d1e215]" : (wid >= 5 ? "border-[#817605]" : (wid >= 4 ? "boreder-orange" : "border-slate"))))
             return <div className=' h-[400px] max-[643px]:h-[324px] max-[475px]:h-[298px]  '>
               <div className=' w-[180px] max-[475px]:w-[110px]  max-[643px]:w-[150px] m-2 max-[643px]:m-[1px] h-[250px] max-[643px]:m-0 '>
@@ -43,7 +40,7 @@ export const Popular = () => {
                     </div>
 
                     <p className='text-white text-[18px]  max-[643px]:text-[15px] max-[473px]:text-[12px] '>
-                      {items.title.slice(0, 20) || items.name.slice(0, 20)}
+                      {items.title.slice(0, 20) || items.name}
                     </p>
                     <p className='  text-slate-400 text-[15px] max-[643px]:text-[13px]  '>
                       {items.first_air_date || items.release_date}
@@ -56,7 +53,6 @@ export const Popular = () => {
           : <h1 className='text-center text-black'>{error}</h1>}
 
       </div>
-
     </div>
   )
 }

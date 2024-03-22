@@ -10,7 +10,7 @@ import { SeriesError, SeriesSuccess } from "../seriesClice/SeriesSlise";
 import { genreSuccess, genreError } from "../genre/GenreSl";
 import { trailerSuccess, trailerError, trailerLoading } from "../trailer-slice/Trailer-slice";
 import { idInformError, idInformLoading, idInformSuccess } from "../id-inform/IdInformSlise";
-
+import { actorsError, actorsSuccess, actorsLoanding } from "../actors-slice/ActorsSlice";
 const apiKey: string = "api_key=81cd179ad56aeece49d8340b7c075f89";
 export const getData = () => async (dispatch: AppDispatch) => {
   try {
@@ -81,8 +81,8 @@ export const getIdInform = (movie_id: any) => async (dispatch: AppDispatch) => {
     setTimeout(() => {
       dispatch(idInformLoading(true))
     }, 1000)
-    const url: string = `https://api.themoviedb.org/3/movie/${movie_id}?${apiKey}`
-    const {data } = await axios.get(url)
+    const urlIn: string = `https://api.themoviedb.org/3/movie/${movie_id}?${apiKey}`
+    const {data } = await axios.get(urlIn)
     dispatch(idInformSuccess(data))
   } catch (e)  {
       dispatch(idInformError("oofoasoo1!!!!"))
@@ -100,4 +100,18 @@ export const trendGetMovie = () => async (dispatch :AppDispatch) => {
     dispatch(trendError("oofoasoo1!!!!"))
   }
 
+}
+
+
+export const getActors = (movie_id: any) => async (dispatch: AppDispatch)  =>   {  
+  try {
+    setTimeout(() => {
+      dispatch(actorsLoanding(true))
+    }, 1000)
+    const url: string = `https://api.themoviedb.org/3/movie/${movie_id}/credits?${apiKey}`
+    const {data } = await axios.get(url)
+    dispatch(actorsSuccess(data.cast))
+  } catch (e) {
+    dispatch(actorsError("errrrrzdfgasdfgsd"))
+  }
 }

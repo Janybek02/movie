@@ -8,7 +8,7 @@ export const Title = () => {
    
     return (
         // <div>
-        <div className=' w-full  pb-10  '>
+        <div className=' w-full  pb-10'>
             <div
                 style={{
                     background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${gbNew}") center/cover `
