@@ -9,17 +9,16 @@ import { Footer } from './components/footer/Footer';
 import { Id_list } from './components/id_list/Id_list';
 import { useAppSelectore } from './hooks/Hooks';
 import { Video } from './components/home/trailer/video/Video';
+import { ActorsPage } from './components/id_list/actors/ActorsPage';
 const Link = () => {
-
-
   return (<>
-
     <Routes>
       <Route path={"/"} element={<Home />} />
       <Route path={"/popular"} element={<Popular />} />
       <Route path={"/series"} element={<Series />} />
       <Route path={"/genre"} element={<Genre />} />
       <Route path={"/:id"} element={<Id_list />} />
+      <Route path={"/actors-page"} element={<ActorsPage/>} />
     </Routes>
     {/* </BrowserRouter> */}
   </>)

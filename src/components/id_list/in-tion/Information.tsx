@@ -15,7 +15,7 @@ export const Information = () => {
   useEffect(() => {
     dispatch(getIdInform(id))
     dispatch(getActors(id))
-    
+
   }, [])
   const allFunc = (id: any) => {
     dispatch(trailerClose(true))
@@ -26,7 +26,7 @@ export const Information = () => {
 
       {
         loading ?
-          <div className='  w-full h-[110vh] '>
+          <div className='  w-full h-[70vh] '>
             {idInform.map(items => {
               const wid: number = Math.trunc(items.vote_average)
               let i

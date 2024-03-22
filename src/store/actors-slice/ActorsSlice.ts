@@ -22,6 +22,8 @@ export const actorsSlice = createSlice({
     reducers : {
         actorsLoanding(state, action: PayloadAction<boolean>){
             state.loanding = action.payload
+            console.log(action.payload);
+            
         },
         actorsSuccess(state, action: PayloadAction<any[]>){
             state.actors = action.payload
