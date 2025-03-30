@@ -25,7 +25,7 @@ export const Popular = () => {
         dots: true,
         infinite: true,
         slidesToShow: slider,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         autoplay: auto,
         speed: 2000,
         autoplaySpeed: 2000,

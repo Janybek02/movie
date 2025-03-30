@@ -11,88 +11,49 @@ export const Actors = () => {
   const { actors, error, loanding } = useAppSelectore(
     (state) => state.actorsSlice
   );
-  console.log(actors);
-  let i = "";
-  const settings = {
-    className: "center",
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 7,
-    swipeToSlide: true,
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
-      );
-    },
-  };
-  return (
-    <div className=" w-[100%] px-2 ">
-      <div className="  w-[100%] justify-between">
-     
-        <Slider {...settings}>
-          {loanding ? (
-            actors.slice(0, 10).map((items) => {
-              let image = items.profile_path
-                ? `https://www.themoviedb.org/t/p/w440_and_h660_face/${items.profile_path}`
-                : img;
-              const wid = Math.trunc(items.popularity);
-              i =
-                wid >= 8
-                  ? "border-[#1eb022]"
-                  : wid >= 7
-                  ? "border-[#3f6d11]"
-                  : wid >= 6
-                  ? "border-[#d1e215]"
-                  : wid >= 5
-                  ? "border-[#817605]"
-                  : wid >= 4
-                  ? "boreder-orange"
-                  : "border-slate";
-              return (
-                <div className=" h-[400px] max-[643px]:h-[324px] max-[475px]:h-[298px]  ">
-                  <div className=" w-[180px] max-[475px]:w-[110px]  max-[643px]:w-[150px] m-2 max-[643px]:m-[1px] h-[250px] max-[643px]:m-0 ">
-                    <div className="w-full rounded-[50%] reletive">
-                      <Link className="" to={`/${items.id}`}>
-                        <div className="w-[180px] h-[270px] flex items-center justify-center bg-slate-200 rounded-[20px]">
-                          <img className=" rounded-[20px]" src={image} alt="" />
-                        </div>
-                      </Link>
-                      <div>
-                        <div className="  flex items-center max-[643px]:w-[50px] w-[100%] ">
-                          <div className=" mt-6 max-[643px]:mt-0 bg-black w-[35px] h-[35px] rounded-[50%]">
-                            <div
-                              className={`border-[3px] ${i}  w-[90%] h-[90%] m-[2px] rounded-[50%] flex items-center justify-center `}
-                            >
-                              <p className=" text-white text-[10px] font-bold ">
-                                {wid * 10}%
-                              </p>
-                            </div>
-                          </div>
-                          <button className="mt-6 max-[643px]:mt-0 ml-[5px] top-1 shadow-sm  text-red-500 text-[25px]">
-                            <AiFillHeart />
-                          </button>
-                          <button className="mt-6 max-[643px]:mt-0 ml-[5px] top-1 shadow-sm  text-white text-[25px]">
-                            <MdBookmarkAdded />
-                          </button>
-                        </div>
+ let i = "";
+    let slider
+    const windSlider = window.innerWidth
+    let speed = windSlider >= 800 ? 2000 : 1000
+    let auto = windSlider >= 800
 
-                        <p className="text-white text-[18px]  max-[643px]:text-[15px] max-[473px]:text-[12px] ">
-                          {items.title || items.name}
-                        </p>
-                        <p className="  text-slate-400 text-[15px] max-[643px]:text-[13px]  ">
-                          {items.first_air_date || items.release_date}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })
-          ) : (
-            <h1 className="text-center text-black">{error}</h1>
-          )}
-        </Slider>
-      </div>
-    </div>
-  );
-};
+    slider = windSlider >= 1500 ? 7 : (windSlider >= 1250 ? 6 : (windSlider >= 1100 ? 5 : (windSlider >= 800 ? 4 : (windSlider >= 500 ? 3 : 2))))
+    const settings = {
+        dots: true,
+        infinite: true,
+        slidesToShow: slider,
+        slidesToScroll: 3,
+        cssEase: "linear"
+    }
+    return (
+        <>
+            <div className=' popular w-full  bg-[#07050e] rounded-t-[5px]'>
+                <Slider {...settings}>
+                    {
+                        actors.map((items) => {
+                             return <>
+                                <div className=' w-[180px] max-[600px]:w-[150px] h-[250px] '>
+                                    <div className='w-full h-full rounded-[50%] reletive'>
+                                        <Link to={`/${items.id}`}>
+                                            <div className='w-full h-full rounded-[20px]'>
+                                                <img className=' rounded-[20px]' src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${items.profile_path}`} alt="" />
+                                            </div>
+                                        </Link>
+                                        <div >     
+                                            <p className='text-white text-[18px] mt-12 max-[600px]:mt-3 max-[600px]:text-[15px] '>
+                                                {items.title || items.name}
+                                            </p>
+                                            <p className='  text-slate-400 text-[15px] max-[600px]:text-[13px]  '>
+                                                {items.first_air_date || items.release_date}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
+                        })
+                    }
+                </Slider>
+            </div>
+        </>
+    )
+}

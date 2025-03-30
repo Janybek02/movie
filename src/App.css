@@ -12,7 +12,9 @@
 ::-webkit-scrollbar {
     width: 10px;
   }
-  
+  .slick-slider{
+    /* height: 100px; */
+  }
   ::-webkit-scrollbar-track {
     background: #0A1128;
   
