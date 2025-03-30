@@ -28,14 +28,7 @@ export const Actors = () => {
   return (
     <div className=" w-[100%] px-2 ">
       <div className="  w-[100%] justify-between">
-      <Link className="hover:text-gray-300" to={'/actors-page'}>
-        <div className=" text-right flex justify-end  items-center ">
-          <p className=" text-white text-lg">More</p>
-          <p className="text-white text-xl ml-1">
-            <FaAngleDoubleRight/>
-          </p>     
-        </div>
-        </Link>
+     
         <Slider {...settings}>
           {loanding ? (
             actors.slice(0, 10).map((items) => {

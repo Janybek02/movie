@@ -30,6 +30,8 @@ export const getMovieSeries = () => async (dispatch: AppDispatch) => {
     const url = `https://api.themoviedb.org/3/discover/tv?${apiKey}`;
     const { data } = await axios.get(url);
     dispatch(SeriesSuccess(data.results));
+    
+    
   } catch (e) {
     const str: string = "Ошибка!!!!";
     dispatch(SeriesError(str));

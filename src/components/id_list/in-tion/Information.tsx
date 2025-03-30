@@ -26,7 +26,7 @@ export const Information = () => {
 
       {
         loading ?
-          <div className='  w-full h-[70vh] '>
+          <div className='  w-full h-[80vh] '>
             {idInform.map(items => {
               const wid: number = Math.trunc(items.vote_average)
               let i
@@ -37,14 +37,14 @@ export const Information = () => {
                     background: `url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${items.backdrop_path}") center/cover `
                   }}
                   className={`w-full h-[500px]  `}>
-                  <div className=' w-full h-full  bg-[#10161689]'>
-                    <div className='flex w-full items-center mx-[40px]    h-full   '>
-                      <div className=' w-[300px]  '>
-                        <img className=' w-full  rounded-[20px]' src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${items.poster_path}`} alt="" />
+                  <div className=' w-full h-full  bg-[#10161696] max-[750px]:bg-[#0a162bd5]'>
+                    <div className='flex w-full items-center max-[750px]:items-start max-[750px]:flex-col  px-[5%] max-[750px]:px-[2%] h-full   '>
+                      <div className=' w-[300px] max-[750px]:hidden '>
+                        <img className=' w-full  rounded-[20px] ' src={`https://www.themoviedb.org/t/p/w440_and_h660_face/${items.poster_path}`} alt="" />
                       </div>
-                      <div className=' w-[70%] ml-[50px] mr-6  flex flex-col justify-between h-[300px]'>
+                      <div className=' w-[70%] ml-[50px] max-[750px]:ml-[5%] ml-[50px]: max-[750px]:w-[90%]  mr-6  flex flex-col justify-between h-[300px]'>
                         <div>
-                        <p className=' text-white text-[30px] font-bold '>{items.title}</p>
+                        <p className=' text-white text-[30px]  max-[900px]:text-[25px] font-bold '>{items.title}</p>
                         <div className=' flex items-center w-[146px] justify-between '>
                           {/*<p className=' text-white font-medium text-[16px] '>{items.genres[0].name || ""}</p>*/}
                           <p className=' text-white font-medium text-[16px] '>{items.release_date}</p>
@@ -54,12 +54,11 @@ export const Information = () => {
                           <div className=' flex items-center w-[350px] justify-between'>
                             <div className=' bg-black  w-[50px] h-[50px] rounded-[50%] flex items-center justify-center'>
                               <div className={`border-[4px] border-[#1eb022]  w-[90%] h-[90%] rounded-[50%] flex items-center justify-center `}>
-                                <p className=' text-white text-[13px] font-bold '>
+                                <p className=' text-white  text-[13px] font-bold '>
                                   {wid * 10}%
                                 </p>
                               </div>
                             </div>
-                           
                             <div className=' w-[40px] h-[40px] rounded-[50%] bg-[#101616] flex items-center justify-center'>
                               <p className=' text-white text-[20px] '>
                                 <MdOutlineFavorite />

@@ -5,13 +5,15 @@ import Slider from "react-slick";
 import React, {useState} from "react";
 
 export const TrailerTrMovie  = () => {
-    const { trend } = useAppSelectore(state => state.trendReducer)
+    const { series } = useAppSelectore(state => state.seriesReducer)
     const { trailer, close } = useAppSelectore(state => state.trailerReducer)
     const [url, setUrl] = useState("/9PqD3wSIjntyJDBzMNuxuKHwpUD.jpg")
     const allFunc = (id:any) => {
         dispatch(trailerClose(true))
         dispatch(getTrailer(id))
     }
+    
+    const changeSlite = () => {}
     const width = window.innerWidth
     let slider = width >= 1289 ? 3 : (width >= 780 ? 2 : 1)
     const dispatch = useAppDispatch()
@@ -36,7 +38,7 @@ export const TrailerTrMovie  = () => {
                    <div className=" bg-[#10161689]  w-full h-full ">
                        <Slider {...settings} >
                            {
-                               trend.map(items => {
+                               series.map(items => {
                                    return <div className="mt-8 w-full h-full">
                                        <div
                                            onMouseOver={() => setUrl(items.backdrop_path)}

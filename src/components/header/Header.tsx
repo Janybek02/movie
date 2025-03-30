@@ -39,8 +39,8 @@ export const Header = () => {
                 onClick={() => setIsOpen(!isOpen)}>
                 <div
                     className={`${genericHamburgerLine} ${isOpen
-                            ? "rotate-45 bg-slate-50 translate-y-3 opacity-50 group-hover:opacity-100"
-                            : "opacity-50 bg-slate-50 group-hover:opacity-100"
+                        ? "rotate-45 bg-slate-50 translate-y-3 opacity-50 group-hover:opacity-100"
+                        : "opacity-50 bg-slate-50 group-hover:opacity-100"
                         }`}
                 />
                 <div
@@ -49,61 +49,61 @@ export const Header = () => {
                 />
                 <div
                     className={`${genericHamburgerLine} ${isOpen
-                            ? "-rotate-45 bg-slate-50 -translate-y-3 opacity-50 group-hover:opacity-100"
-                            : "opacity-50 bg-slate-50 group-hover:opacity-100"
+                        ? "-rotate-45 bg-slate-50 -translate-y-3 opacity-50 group-hover:opacity-100"
+                        : "opacity-50 bg-slate-50 group-hover:opacity-100"
                         }`}
                 />
             </button>
             <Link
-            onClick={() => setIsOpen(false)}
-            to={"/"} >
+                onClick={() => setIsOpen(false)}
+                to={"/"} >
                 <p className=' text-[25px] px-6 font-bold  rounded-[5px]hidden md:block cursor-pointer text-white hover:text-white uppercase   '>Logo</p>
             </Link>
         </div>
     </>
-    const burgerMenu =  <>
-        <div  className={` w-full ${isOpen ? "translate-x-[0px]" : "translate-x-[-600px]"} transition duration-[1200ms] h-[110vh] bg-black/60 top-16 flex-col flex items-center left-0 absolute z-10`}>
-                <Link to={"/popular"}>
-                    <p 
-                        onClick={() => setIsOpen(!isOpen)}
+    const burgerMenu = <>
+        <div className={` w-full ${isOpen ? "translate-x-[0px]" : "translate-x-[-600px]"} transition duration-[1200ms] h-[110vh] bg-black/60 top-16 flex-col flex items-center left-0 absolute z-10`}>
+            <Link to={"/popular"}>
+                <p
+                    onClick={() => setIsOpen(!isOpen)}
                     className=' text-white text-[18px] font-bold  rounded-[5px]  '>Popular</p>
-                </Link>
-                <Link
+            </Link>
+            <Link
                 onClick={() => setIsOpen(!isOpen)}
                 to={"/series"}>
-                    <p className=' text-white text-[18px] font-bold  rounded-[5px]   '>Ceries</p>
-                </Link>
-                <Link
+                <p className=' text-white text-[18px] font-bold  rounded-[5px]   '>Ceries</p>
+            </Link>
+            <Link
                 onClick={() => setIsOpen(!isOpen)}
                 to={"/genre"}>
-                    <p className='text-white text-[18px]  font-bold rounded-[5px]'>Genre</p>
-                </Link>
-            
-            
-                <p className=' text-[20px] font-bold  rounded-[5px] text-white '>Favorite</p>
-                <p className=' text-[20px] font-bold  rounded-[5px] text-white'>Ru</p>
-            </div>
-    
+                <p className='text-white text-[18px]  font-bold rounded-[5px]'>Genre</p>
+            </Link>
+
+
+            <p className=' text-[20px] font-bold  rounded-[5px] text-white '>Favorite</p>
+            <p className=' text-[20px] font-bold  rounded-[5px] text-white'>Ru</p>
+        </div>
+
     </>
-    const scroll = () =>{
-        if (isOpen === true){
+    const scroll = () => {
+        if (isOpen === true) {
             return document.body.style.overflow = "hidden"
         } else document.body.style.overflow = "auto"
     }
-useEffect(() => {
-    scroll()
-    window.addEventListener("scroll", () => {
-        const windowWidth = window.scrollY
-        if (windowWidth > 72) {
-            setItem("rgba(0, 0 , 0 ,70%)")
-        } else {
-            setItem("#07050e")
-        }
+    useEffect(() => {
+        scroll()
+        window.addEventListener("scroll", () => {
+            const windowWidth = window.scrollY
+            if (windowWidth > 72) {
+                setItem("rgba(0, 0 , 0 ,70%)")
+            } else {
+                setItem("#07050e")
+            }
+        })
+        const item = window.innerWidth > 600 ? true : false
+        setChooseMenu(item)
+
     })
-    const item = window.innerWidth > 600 ? true : false
-    setChooseMenu(item )
-    
-})
     return (
         <div
             style={{
@@ -111,10 +111,10 @@ useEffect(() => {
             }}
             className={` w-full h-[70px]  top-0 z-50 sticky  p-4 items-center max-[800px]:px-1 px-16`}>
             {chooseMenu ? menu : burgerBox}
-            {   chooseMenu ? 
-                 null : burgerMenu 
+            {chooseMenu ?
+                null : burgerMenu
             }
-             
+
         </div>
     )
 }
